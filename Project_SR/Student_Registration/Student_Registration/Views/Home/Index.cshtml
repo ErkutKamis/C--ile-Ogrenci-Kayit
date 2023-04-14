@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<main>
+    <section class="row" aria-labelledby="aspnetTitle">
+        <h1 id="title">Hoşgeldiniz</h1>
+        <p class="lead">Öğrenci Kayıt Sistemine Hoşgeldiniz.Bu sistem üzerinden öğrencilerinizi kolayca kaydedin ve yönetin.</p>
+        <br />
+    </section>
+    <br />
+
+    <div class="row">
+        <section class="row" aria-labelledby="gettingStartedTitle">
+            <h2 id="gettingStartedTitle">Öğrenci Listesi</h2>
+            <p class="">
+                Öğrenci ekleme işlemine gitmek için <b>"Yeni Kayıt"</b>butonuna , Öğrenci Listesine ulaşabilmek için <b>"Listeye Git"</b> butonuna tıklayabilirsiniz ya da üst tarafta bulunan sekmelerden ulaşabilirsiniz.
+            </p>
+            <p><a class="btn btn-primary" href="@Url.Action("Create", "Student")">Yeni Kayıt</a>
+            <a class="btn btn-primary" href="@Url.Action("Index", "Student")">Listeye Git</a></p>
+        </section>
+
+    </div>
+</main>

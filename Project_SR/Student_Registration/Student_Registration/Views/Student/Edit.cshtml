@@ -1,0 +1,61 @@
+﻿@model Student_Registration.Models.Students
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h4>Öğrenci Bilgileri Düzenle</h4>
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.İsim, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.İsim, new { @class = "form-control", PlaceHolder = "Adı Giriniz.", Required = "" })
+                @Html.ValidationMessageFor(model => model.İsim, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Soyisim, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Soyisim, new { @class = "form-control", PlaceHolder = "Soy Adı Giriniz.", Required = "" })
+                @Html.ValidationMessageFor(model => model.Soyisim, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Email, new { @class = "form-control", PlaceHolder = "E-mail Adresi Giriniz.", Required = "" })
+                @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Telefon, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextBoxFor(model => model.Telefon, new { @class = "form-control", PlaceHolder = "Telefon Numarası Giriniz.", Required = "" })
+                @Html.ValidationMessageFor(model => model.Telefon, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <br />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Güncelle" class="btn btn-success" /> | <a class="btn btn-primary" href="@Url.Action("Index", "Student")">Öğrenci Listesine Git</a>
+            </div>
+        </div>
+    </div>
+    <br />
+}
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
